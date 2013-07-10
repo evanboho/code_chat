@@ -1,0 +1,3 @@
+== README
+
+A simple chat app in Rails 4 with syntax highlighting for Ruby.

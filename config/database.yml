@@ -1,0 +1,21 @@
+common: &common
+  adapter: postgresql
+  host: localhost
+
+development:
+  <<: *common
+  database: code_chat_development
+  pool: 5
+  timeout: 5000
+
+test:
+  <<: *common
+  database: code_chat_text  
+  pool: 5
+  timeout: 5000
+
+production:
+  <<: *common
+  database: code_chat_production
+  pool: 5
+  timeout: 5000
