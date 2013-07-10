@@ -1,0 +1,2 @@
+module EshqHelper
+end

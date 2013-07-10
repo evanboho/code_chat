@@ -16,7 +16,8 @@ class EventsController < ApplicationController
     redis.subscribe('messages.create') do |on|
       on.message do |event, data|
         code = CodeRay.scan(JSON.parse(data)['content'], :ruby).div.gsub("\n", "")
-        response.stream.write("data: #{code}\n\n")
+        ESHQ.send(:channel => "events/events", :data => data, :type => "message")
+        # response.stream.write("data: #{code}\n\n")
       end
     end
   rescue IOError
