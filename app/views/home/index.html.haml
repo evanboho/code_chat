@@ -10,4 +10,5 @@
     = text_field_tag :content
     = submit_tag "Send", class: "button radius"
 
-  = button_to "Reset", reset_messages_path, class: "button expand alert", remote: true
+  .reset
+    = button_to "Reset", reset_messages_path, class: "button expand alert", remote: true

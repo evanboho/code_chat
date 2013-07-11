@@ -10,10 +10,17 @@
     font-size: 14px;
   }
 }
+
 #code {
   margin: 10px;
 }
 
 input.button {
+  margin-left: 6px;
   padding: 7px 15px;
+}
+
+.reset {
+  width: 50%;
+  margin: 0 auto;
 }
