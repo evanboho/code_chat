@@ -1,6 +1,19 @@
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .home-index {
   input[type=text] {
-    width: 50%;
-    font-size: 18px;
+    display: inline-block;
+    width: 80%;
+    font-size: 14px;
   }
+}
+#code {
+  margin: 10px;
+}
+
+input.button {
+  padding: 7px 15px;
 }

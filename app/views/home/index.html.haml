@@ -1,12 +1,13 @@
 .row
   .large-8
     %h1 CodeChat
-.row
-  .large-12.columns
-    #code
-      - @messages.data.each do |key, msg|
-        .msg
-          = raw CodeRay.scan(msg, :ruby).div
-    = form_for Event.new, remote: true do |f|
-      = f.text_field :content
-      = f.submit "Send", class: "button radius"
+.container
+  #code
+    - @messages.data.each do |key, msg|
+      .msg
+        = raw CodeRay.scan(msg, :ruby).div
+  = form_tag create_message_path, method: :post, remote: true do |f|
+    = text_field_tag :content
+    = submit_tag "Send", class: "button radius"
+
+  = button_to "Reset", reset_messages_path, class: "button expand alert", remote: true

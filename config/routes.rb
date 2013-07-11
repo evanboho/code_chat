@@ -1,12 +1,13 @@
 CodeChat::Application.routes.draw do
 
-  get "events/events"
-  resources :events
-
   post "eshq/socket", to: "eshq#socket"
+
+  post "messages/reset", to: "messages#reset", as: "reset_messages"
+  post "messages/create", to: "messages#create", as: "create_message"
 
   get "home/index"
   root to: "home#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

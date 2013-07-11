@@ -13,4 +13,8 @@ class Messages
     $redis.set("messages", @data.to_json)
   end
 
+  def reset
+    $redis.set("messages", nil)
+  end
+
 end
