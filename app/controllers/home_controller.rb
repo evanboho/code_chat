@@ -2,7 +2,8 @@ class HomeController < ApplicationController
   include ActionController::Live
 
   def index
-    @messages = Messages.new
+    channel = Messages.new.channel
+    redirect_to messages_path(lang: params[:lang] || "ruby", channel: channel)
   end
 
 end

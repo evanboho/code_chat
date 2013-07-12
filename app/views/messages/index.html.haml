@@ -1,0 +1,19 @@
+.row
+  .large-8
+    %h1 CodeChat
+.container
+  #code
+    - @messages.each do |key, msg|
+      .msg
+        = raw CodeRay.scan(msg, @lang.to_sym).div
+  = form_tag create_message_path, method: :post, remote: true do
+    = hidden_field_tag :lang, @lang
+    = hidden_field_tag :channel, @channel
+    = text_field_tag :content
+    = submit_tag "Send", class: "button radius"
+
+  .reset
+    = button_to "Reset", reset_messages_path(channel: @channel), class: "button expand alert", remote: true
+
+  .lang-options
+    = select_tag :lang, options_for_select(Messages.lang_options.collect { |a| [a,a] })
