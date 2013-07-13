@@ -11,3 +11,8 @@ $ ->
     $('#code').append("<div class='msg'>#{e.data}</div>")
   reset.onmessage = (e) ->
     $('#code').html("")
+
+
+  $('select').on "change", ->
+    console.log $(this).val()
+    window.location = "/" + $(this).val()

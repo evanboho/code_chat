@@ -26,12 +26,17 @@ input.button {
 }
 
 .lang-options {
-  margin: 0 auto;
+  margin: 0.69em auto;
   width: 50%;
   font-size: 18px;
   select {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #666;
     -webkit-appearance: none;
     width: auto;
-
+    border: 1px solid #f5f5f5;
+    font-size: 44px;
+    font-weight: bold;
   }
 }

@@ -5,6 +5,7 @@ CodeChat::Application.routes.draw do
   post "messages/reset", to: "messages#reset", as: "reset_messages"
   post "messages/create", to: "messages#create", as: "create_message"
 
+  get "/:lang", to: "home#index"
   root to: "home#index"
 
   get "/:lang/:channel", to: "messages#index", as: "messages"

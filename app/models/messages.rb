@@ -29,6 +29,10 @@ class Messages
     data[@channel] ||= {}
   end
 
+  def self.lang_options_for_select
+    lang_options.collect { |a| [a,a] }
+  end
+
   def self.lang_options
     %w(ruby javascript python java)
   end
